@@ -1,7 +1,7 @@
 :root {
     --size-ref: 1rem;
     --scale-factor-min-width640: 1;
-    --scale-factor-max-width640: 0.75;
+    --scale-factor-max-width640: 0.7;
     --scale-factor-min-width960: 1;
     --scale-factor-min-width1100: 1.25;
     --size-ref-h1: calc(2*var(--size-ref));
