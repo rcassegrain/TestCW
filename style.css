@@ -18,6 +18,7 @@
     --size-border-width: calc(0.15*var(--size-ref));
     --size-label-font: calc(1.25*var(--size-ref));
     --size-img-banner-height: calc(6*var(--size-ref));
+    --size-img-height: calc(4*var(--size-ref));
 }
 
 * {
@@ -38,7 +39,6 @@ header, footer {
 body {
     background-color: #7EBEC5;
     font-family: Arial, Helvetica, sans-serif;
-    display: block;
 }
 
 @media (max-width: 640px) {
@@ -68,6 +68,10 @@ body {
     }
     .picture-banner {
         height: calc(var(--size-img-banner-height)*var(--scale-factor-max-width640));
+        width: auto;
+    }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-max-width640));
         width: auto;
     }
 }
@@ -101,6 +105,10 @@ body {
         height: calc(var(--size-img-banner-height)*var(--scale-factor-min-width640));
         width: auto;
     }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-min-width640));
+        width: auto;
+    }
 }
 
 @media (min-width:960px) {
@@ -132,6 +140,10 @@ body {
         height: calc(var(--size-img-banner-height)*var(--scale-factor-min-width960));
         width: auto;
     }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-min-width960));
+        width: auto;
+    }
 }
 
 @media (min-width:1100px) {
@@ -161,6 +173,10 @@ body {
     }
     .picture-banner {
         height: calc(var(--size-img-banner-height)*var(--scale-factor-min-width1100));
+        width: auto;
+    }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-min-width1100));
         width: auto;
     }
 }
@@ -229,4 +245,9 @@ h2 {
     color:#F27069;
     background-color: black;
     border: solid #F27069;
+}
+
+.pictures {
+   display: block;
+   margin: auto;
 }
