@@ -5,6 +5,7 @@ const btnResult = document.getElementById("btn_result");
 const txtCW = document.getElementById("txt_CW");
 const lblResult = document.getElementById("lbl_result");
 let txtContent = "";
+let indextab = 0;
 
 // Events listners
 btnDelete.addEventListener('click', onbtnDeleteClick);
@@ -82,6 +83,29 @@ function onbtnResultClick() {
             lblResult.style.color = "#ff0000";
         }
     }
+}
+
+txtCW.addEventListener('input', ontxtCWChange);
+function ontxtCWChange() {
+    let txtToCheck = txtCW.value;
+    if(txtToCheck.length - 1 < indextab) {
+        indextab = 0;
+        txtToCheck = txtToCheck.replaceAll(/[\r\n\s\t\f\v]/g, "");
+    }
+    txtToCheck = txtToCheck.split("");
+    let modulo = 0;
+    let j = 1;
+    for(let i = indextab; i <= txtToCheck.length - 1; i++) {
+        modulo = (i + 1) % 6;
+        if(modulo === 0) {
+            txtToCheck.splice(indextab, 0, " ");
+            indextab = i + 1 + j;
+            j++;
+        } else {
+            indextab = i + 1;
+        }
+    }
+    txtCW.value = txtToCheck.join("");
 }
 
 var options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
