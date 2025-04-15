@@ -4,8 +4,10 @@ const btnSelect = document.getElementById("btn_select");
 const btnResult = document.getElementById("btn_result");
 const txtCW = document.getElementById("txt_CW");
 const lblResult = document.getElementById("lbl_result");
+const tableResult = document.getElementById("tableresult");
 let txtContent = "";
-let indextab = 0;
+let indextabtext = 0;
+let indextabresult = 0;
 
 // Events listners
 btnDelete.addEventListener('click', onbtnDeleteClick);
@@ -20,6 +22,7 @@ function onbtnDeleteClick(test = true) {
             txtCW.value = "";
             lblResult.innerText = "";
             lblResult.style.color = "#000000";
+            indextabtext = 0;
         }
     }
 }
@@ -61,51 +64,64 @@ function onbtnResultClick() {
     txtToCheck = txtToCheck.toUpperCase();
     let nbLetters = txtToCheck.length;
     let nbContent = txtContent.length;
-    if ((txtToCheck == "") || (txtContent == "")) {
+    let result = [nbContent];
+    if((txtToCheck == "") || (txtContent == "")) {
         alert("Pas de fichier texte sélectionné, fichier incompatible ou texte saisi vide.");
     } else {
-        for (let i = 0; i <= nbContent; i++) {
-            if (txtToCheck[i] != txtContent[i]) {
+        for(let i = 0; i <= nbContent - 1; i++) {
+            if(txtToCheck[i] != txtContent[i]) {
                 nbErrors++;
+                result[i] = '<b class="border"><b class="error">' + txtToCheck[i] + '</b>' + '<b class="correct">' + txtContent[i] + '</b>' + '</b>';
+            } else {
+                result[i] = '<b class="correct">' + txtToCheck[i] + '</b>';
             }
         }
         let message = "Nombre de fautes : " + nbErrors + " / " + nbContent;
-        if (nbErrors == 0) {
+        if(nbErrors == 0) {
             message = message + "\n Félicitations !!!"
         }
-        if (nbLetters != nbContent) {
+        if(nbLetters != nbContent) {
             message = message + "\n Nombre de caractères différents entre le fichier texte et le texte saisi."
         }
         lblResult.innerText = message;
-        if (nbErrors == 0) {
+        if(nbErrors == 0) {
             lblResult.style.color = "#008000";
         } else {
             lblResult.style.color = "#ff0000";
         }
+        let resulttab = txtSplit(result, "<br>", indextabresult);
+        tableResult.innerHTML = resulttab[0];
+        indextabresult = 0;
     }
 }
 
 txtCW.addEventListener('input', ontxtCWChange);
 function ontxtCWChange() {
     let txtToCheck = txtCW.value;
-    if(txtToCheck.length - 1 < indextab) {
-        indextab = 0;
+    if(txtToCheck.length - 1 < indextabtext) {
+        indextabtext = 0;
         txtToCheck = txtToCheck.replaceAll(/[\r\n\s\t\f\v]/g, "");
     }
     txtToCheck = txtToCheck.split("");
+    let result = txtSplit(txtToCheck, " ", indextabtext);
+    txtCW.value = result[0];
+    indextabtext = result[1];
+}
+
+function txtSplit(txtToCheck, splitter, index) {
     let modulo = 0;
     let j = 1;
-    for(let i = indextab; i <= txtToCheck.length - 1; i++) {
+    for(let i = index; i <= txtToCheck.length - 1; i++) {
         modulo = (i + 1) % 6;
         if(modulo === 0) {
-            txtToCheck.splice(indextab, 0, " ");
-            indextab = i + 1 + j;
+            txtToCheck.splice(index, 0, splitter);
+            index = i + 1 + j;
             j++;
         } else {
-            indextab = i + 1;
+            index = i + 1;
         }
     }
-    txtCW.value = txtToCheck.join("");
+    return [txtToCheck.join(""), index];
 }
 
 var options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
