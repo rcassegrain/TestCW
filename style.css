@@ -20,7 +20,7 @@
     --size-table-result: calc(1*var(--size-ref));
     --size-img-banner-height: calc(6*var(--size-ref));
     --size-img-height: calc(4*var(--size-ref));
-    --size-img-icon-height: calc(5*var(--size-ref));
+    --size-img-icon-height: calc(3*var(--size-ref));
 }
 
 * {
