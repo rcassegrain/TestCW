@@ -23,6 +23,7 @@ function onbtnDeleteClick(test = true) {
             lblResult.innerText = "";
             lblResult.style.color = "#000000";
             indextabtext = 0;
+            tableResult.innerHTML ="";
         }
     }
 }
