@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Sixtyfour+Convergence&family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Pixelify+Sans:wght@400..700&family=Wallpoet&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Test CW</title>
+</head>
+<header>
+    <a href="https://aras72.r-e-f.org">
+    <img src="Banniere ARAS72.png" alt="Bannière ARAS-REF72" class="picture-banner" role="Logo radio club ARAS-REF 72" title="lien vers ARAS-REF72"></a><br>
+    <p id="horloge" class="horloge"></p>
+</header>
+<body>
+    <div>
+        <h1>Entrainement CW</h1>
+        <img src="morsekey.svg" alt="Image clé code Morse" class="pictures" role="Image clé code Morse">
+    </div>
+    <div>
+        <h2>1. Sélectionner le fichier texte :</h2>
+        <input id="btn_select" type="file" name="filename" accept="text/plain"/>
+    </div>
+    <div>
+        <h2>2. Lancer logiciel CW_Player et charger le même fichier texte :</h2>
+        <p>Installer CW_PLAYER si non installé au préalable :
+        <a href="http://f6dqm.free.fr/soft/cwplayer_install.zip">
+        <img src="CWplayer.svg" alt="Télécharger logiciel CW_Player" class="pictures-icon" role="Télécharger logiciel CW_Player" title="Télécharger logiciel CW_Player"></a></p>
+    </div>
+    <div>
+        <h2>3. Ecrire  :</h2>
+        <input class="button" id="btn_delete" type="button" value="Effacer..." />
+        <p><U>Note :</U> NE PAS écrire les balises de début et fin de texte "VVV=" et "=+".</p>
+        <textarea class="textbox" id="txt_CW" name="txt_CW" rows="20" cols="50" autocapitalize="on"></textarea>
+    </div>
+    <div>
+        <h2>4 .Résultat :</h2>
+        <input class="button" id="btn_result" type="button" value="Afficher..." />
+        <label class="label" id="lbl_result" for="btn_result"></label><br>
+        <p class="result" id="tableresult"></p>
+    </div>
+    <br>
+</body>
+<Footer>
+    <p><a href="mailto:f4lucfr@gmail.com" >Contact IT : F4LUC</a><br>
+    Tous droits réservés ARAS-REF 72 ® / All rights reserved ARAS-REF 72 ©</p>
+</Footer>
+</html>

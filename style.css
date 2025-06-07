@@ -1,0 +1,321 @@
+:root {
+    --size-ref: 1rem;
+    --scale-factor-min-width640: 1;
+    --scale-factor-max-width640: 0.7;
+    --scale-factor-min-width960: 1;
+    --scale-factor-min-width1100: 1.25;
+    --size-ref-h1: calc(2*var(--size-ref));
+    --size-ref-h2: calc(1.5*var(--size-ref));
+    --size-textbox-width: calc(30*var(--size-ref));
+    --size-textbox-height: calc(20*var(--size-ref));
+    --size-button-width: calc(10*var(--size-ref));
+    --size-button-height: calc(2*var(--size-ref));
+    --size-textbox-font: calc(2*var(--size-ref));
+    --size-button-font: calc(var(--size-ref));
+    --size-border-radius: calc(0.5*var(--size-ref));
+    --size-padding: calc(0.25*var(--size-ref)) calc(0.5*var(--size-ref));
+    --size-margin: calc(0.5*var(--size-ref));
+    --size-border-width: calc(0.15*var(--size-ref));
+    --size-label-font: calc(1.25*var(--size-ref));
+    --size-table-result: calc(1*var(--size-ref));
+    --size-img-banner-height: calc(6*var(--size-ref));
+    --size-img-height: calc(4*var(--size-ref));
+    --size-img-icon-height: calc(3*var(--size-ref));
+}
+
+* {
+    font-size:100%;
+    margin: var(--size-margin);
+    padding: var(--size-paddingn);
+    box-sizing: border-box;
+}
+
+header, footer {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:white;
+    text-align: center;
+    border: solid;
+    border-color: black;
+}
+
+body {
+    background-color: #7EBEC5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 640px) {
+    h1 {font-size:calc(var(--size-ref-h1)*var(--scale-factor-max-width640));}
+    h2 {font-size:calc(var(--size-ref-h2)*var(--scale-factor-max-width640));}
+    .textbox {
+        width: calc(var(--size-textbox-width)*var(--scale-factor-max-width640));
+        height: calc(var(--size-textbox-height)*var(--scale-factor-max-width640));
+        font-size: calc(var(--size-textbox-font)*var(--scale-factor-max-width640));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-max-width640));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-max-width640));
+        padding: calc(var(--size-padding)*var(--scale-factor-max-width640));
+    }
+    .button, input[type="file"]::file-selector-button {
+        width: calc(var(--size-button-width)*var(--scale-factor-max-width640));
+        height: calc(var(--size-button-height)*var(--scale-factor-max-width640));
+        font-size: calc(var(--size-button-font)*var(--scale-factor-max-width640));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-max-width640));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-max-width640));
+        padding: calc(var(--size-padding)*var(--scale-factor-max-width640));
+    }
+    body {
+        font-size: calc(var(--size-button-font)*var(--scale-factor-max-width640));
+    }
+    .label {
+        font-size: calc(var(--size-label-font)*var(--scale-factor-max-width640));
+    }
+    .result {
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-max-width640));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-max-width640));
+        padding: calc(var(--size-padding)*var(--scale-factor-max-width640));
+        font-size: calc(var(--size-table-result)*var(--scale-factor-max-width640));
+    }
+    .picture-banner {
+        height: calc(var(--size-img-banner-height)*var(--scale-factor-max-width640));
+        width: auto;
+    }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-max-width640));
+        width: auto;
+    }
+    .pictures-icon {
+        height: calc(var(--size-img-icon-height)*var(--scale-factor-max-width640));
+        width: auto;
+    }
+}
+
+@media (min-width: 640px) {
+    h1 {font-size:calc(var(--size-ref-h1)*var(--scale-factor-min-width640));}
+    h2 {font-size:calc(var(--size-ref-h2)*var(--scale-factor-min-width640));}
+    .textbox {
+        width: calc(var(--size-textbox-width)*var(--scale-factor-min-width640));
+        height: calc(var(--size-textbox-height)*var(--scale-factor-min-width640));
+        font-size: calc(var(--size-textbox-font)*var(--scale-factor-min-width640));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width640));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width640));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width640));
+    }
+    .button, input[type="file"]::file-selector-button {
+        width: calc(var(--size-button-width)*var(--scale-factor-min-width640));
+        height: calc(var(--size-button-height)*var(--scale-factor-min-width640));
+        font-size: calc(var(--size-button-font)*var(--scale-factor-min-width640));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width640));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width640));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width640));
+    }
+    body {
+        font-size: calc(var(--size-button-font)*var(--scale-factor-min-width640));
+    }
+    .label {
+        font-size: calc(var(--size-label-font)*var(--scale-factor-min-width640));
+    }
+    .result {
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width640));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width640));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width640));
+        font-size: calc(var(--size-table-result)*var(--scale-factor-min-width640));
+    }
+    .picture-banner {
+        height: calc(var(--size-img-banner-height)*var(--scale-factor-min-width640));
+        width: auto;
+    }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-min-width640));
+        width: auto;
+    }
+    .pictures-icon {
+        height: calc(var(--size-img-icon-height)*var(--scale-factor-min-width640));
+        width: auto;
+    }
+}
+
+@media (min-width:960px) {
+    h1 {font-size:calc(var(--size-ref-h1)*var(--scale-factor-min-width960));}
+    h2 {font-size:calc(var(--size-ref-h2)*var(--scale-factor-min-width960));}
+    .textbox {
+        width: calc(var(--size-textbox-width)*var(--scale-factor-min-width960));
+        height: calc(var(--size-textbox-height)*var(--scale-factor-min-width960));
+        font-size: calc(var(--size-textbox-font)*var(--scale-factor-min-width960));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width960));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width960));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width960));
+    }
+    .button, input[type="file"]::file-selector-button {
+        width: calc(var(--size-button-width)*var(--scale-factor-min-width960));
+        height: calc(var(--size-button-height)*var(--scale-factor-min-width960));
+        font-size: calc(var(--size-button-font)*var(--scale-factor-min-width960));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width960));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width960));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width960));
+    }
+    body {
+        font-size: calc(var(--size-button-font)*var(--scale-factor-min-width960));
+    }
+    .label {
+        font-size: calc(var(--size-label-font)*var(--scale-factor-min-width960));
+    }
+    .result {
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width960));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width960));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width960));
+        font-size: calc(var(--size-table-result)*var(--scale-factor-min-width960));
+    }
+    .picture-banner {
+        height: calc(var(--size-img-banner-height)*var(--scale-factor-min-width960));
+        width: auto;
+    }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-min-width960));
+        width: auto;
+    }
+    .pictures-icon {
+        height: calc(var(--size-img-icon-height)*var(--scale-factor-min-width960));
+        width: auto;
+    }
+}
+
+@media (min-width:1100px) {
+    h1 {font-size:calc(var(--size-ref-h1)*var(--scale-factor-min-width1100));}
+    h2 {font-size:calc(var(--size-ref-h2)*var(--scale-factor-min-width1100));}
+    .textbox {
+        width: calc(var(--size-textbox-width)*var(--scale-factor-min-width1100));
+        height: calc(var(--size-textbox-height)*var(--scale-factor-min-width1100));
+        font-size: calc(var(--size-textbox-font)*var(--scale-factor-min-width1100));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width1100));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width1100));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width1100));
+    }
+    .button, input[type="file"]::file-selector-button {
+        width: calc(var(--size-button-width)*var(--scale-factor-min-width1100));
+        height: calc(var(--size-button-height)*var(--scale-factor-min-width1100));
+        font-size: calc(var(--size-button-font)*var(--scale-factor-min-width1100));
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width1100));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width1100));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width1100));
+    }
+    body {
+        font-size: calc(var(--size-button-font)*var(--scale-factor-min-width1100));
+    }
+    .label {
+        font-size: calc(var(--size-label-font)*var(--scale-factor-min-width1100));
+    }
+    .result {
+        border-radius: calc(var(--size-border-radius)*var(--scale-factor-min-width1100));
+        border-width: calc(var(--size-border-width)*var(--scale-factor-min-width1100));
+        padding: calc(var(--size-padding)*var(--scale-factor-min-width1100));
+        font-size: calc(var(--size-table-result)*var(--scale-factor-min-width1100));
+    }
+    .picture-banner {
+        height: calc(var(--size-img-banner-height)*var(--scale-factor-min-width1100));
+        width: auto;
+    }
+    .pictures {
+        height: calc(var(--size-img-height)*var(--scale-factor-min-width1100));
+        width: auto;
+    }
+    .pictures-icon {
+        height: calc(var(--size-img-icon-height)*var(--scale-factor-min-width1100));
+        width: auto;
+    }
+}
+
+h1 {
+    color: black;
+    font-family: "Wallpoet", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 {
+    color: black;
+    font-weight: bold;
+    text-align:left;
+}
+
+.button, input[type="file"]::file-selector-button {
+    display:inherit;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button:hover, input[type="file"]::file-selector-button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.button:active, input[type="file"]::file-selector-button:active {
+    background-color:lightgray;
+    color: black;
+    border-color: black;
+}
+
+.textbox {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    border-style: solid;
+    border-color: #000000;
+    cursor: text;
+    scroll-behavior: auto;
+    scrollbar-color: #7EBEC5;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.result {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    font-weight: bold;
+    text-align: left;
+    border-style: solid;
+    border-color: #000000;
+    cursor: text;
+    height: fit-content;
+    width: fit-content;
+}
+
+.error {
+    color: #ff0000;
+    text-decoration: line-through;
+}
+
+.correct {
+    color: #008000;
+}
+
+.border {
+    border-style: dotted;
+    border-color: #ff0000;
+}
+
+.horloge {
+    width: auto;
+    height: auto;
+    font-family:"Sixtyfour Convergence", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:#F27069;
+    background-color: black;
+    border: solid #F27069;
+}
+
+.pictures {
+   display: block;
+   margin: auto;
+}
